@@ -14,6 +14,8 @@ import colorama
 # print(colorama.Fore.GREEN + "\n" + translator + "\n" + colorama.Style.RESET_ALL)
 
 app = CTk()
+app.title("Translator - |by 0xtheghost|")
+app.iconbitmap('')
 app.geometry("500x400")
 theme : str = "dark"
 
