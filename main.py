@@ -45,7 +45,7 @@ languages = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'assamese
              'persian', 'polish', 'portuguese', 'romanian', 'russian', 'serbian', 'slovak', 'slovenian', 'spanish', 
              'swahili', 'swedish', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'vietnamese', 'zulu']
 
-boxselect = CTkComboBox(app, width=200, height=50, corner_radius=15, values=languages, dropdown_font=("Arial", 15))
+boxselect =  CTkComboBox(master=app, width=200, height=50,corner_radius=15,border_width=0,fg_color="#2d3036",button_color="#32456b",button_hover_color="#141a26",dropdown_fg_color="#212121",dropdown_hover_color="#2d3036",font=("Arial", 15),dropdown_font=("Arial", 15), values=languages,)
 boxselect.place(relx=0.5, rely=0.7, anchor="center")
 
 btn = CTkButton(app, text="Translate", width=200, height=50, corner_radius=12, fg_color="transparent", 
