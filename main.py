@@ -7,19 +7,23 @@ from PIL import Image
 app = CTk()
 app.geometry("1000x800")
 app.title("Translator - |by 0xtheghost|")
-app._set_appearance_mode("dark")
+set_appearance_mode("dark")
 app.resizable(width=True, height=True)
 app.minsize(width=900, height=600)
 
-theme : str = "dark"
-set_appearance_mode(theme)
-icon_translate = Image.open(f'images/translate_for_{theme}.png')
-icon_arrow = Image.open(f'images/right-arrow.png')
+icon_translate = Image.open('images/translate_for_dark.png')
+icon_arrow = Image.open('images/right-arrow.png')
 
 def click_translate():
     language = boxselect.get()
-    text_to_translate : str = boxtext.get(0.0, END)
-    boxresult.configure(text=GoogleTranslator(source="auto", target=language).translate(text_to_translate))
+    text_to_translate = boxtext.get("1.0", END)  # Pour récupérer tout le texte
+    translation = GoogleTranslator(source="auto", target=language).translate(text_to_translate)
+
+    # Pour modifier le texte dans un CTkTextbox désactivé
+    boxresult.configure(state="normal")  # Activer la modification
+    boxresult.delete("1.0", END)  # Supprimer l'ancien contenu
+    boxresult.insert("1.0", translation)  # Insérer la traduction
+    boxresult.configure(state="disabled")  # Désactiver à nouveau
 
 
 label = CTkLabel(master=app, 
@@ -28,9 +32,9 @@ label = CTkLabel(master=app,
                  text_color="#32b878")
 label.place(relx=.5, rely=.2, anchor="n")
 
-img_arrow = CTkLabel(master=app,
-                      text="", 
-                      image=CTkImage(dark_image=icon_arrow, size=(20,20)))
+img_arrow = CTkLabel(master=app, 
+                     text="", 
+                     image=CTkImage(dark_image=icon_arrow, size=(20,20)))
 img_arrow.place(relx=.5, rely=.5, anchor="center")
 
 boxtext = CTkTextbox(master=app, 
@@ -42,17 +46,15 @@ boxtext = CTkTextbox(master=app,
                      activate_scrollbars=True)
 boxtext.place(relx=.25, rely=.5, anchor="center")
 
-boxresult = CTkLabel(master=app,
-                     text=None, 
+boxresult = CTkTextbox(master=app, 
+                     wrap="word",
                      width=400, 
-                     height=150, 
-                     corner_radius=15,
-                     fg_color="#2d3036",
-                     wraplength=400,
-                     anchor="nw",
-                     justify="left",
-                     pady=15)
+                     height=150,
+                     fg_color="#2d3036", 
+                     corner_radius=15, 
+                     activate_scrollbars=True)
 boxresult.place(relx=.75, rely=.5, anchor="center")
+boxresult.configure(state="disabled")
 
 boxselect = CTkComboBox(master=app, 
                         width=200, 
