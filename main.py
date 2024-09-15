@@ -8,81 +8,49 @@ app = CTk()
 app.geometry("1000x800")
 app.title("Translator - |by 0xtheghost|")
 set_appearance_mode("dark")
-app.resizable(width=True, height=True)
-app.minsize(width=900, height=600)
+app.minsize(900, 600)
 
 icon_translate = Image.open('images/translate_for_dark.png')
 icon_arrow = Image.open('images/right-arrow.png')
 
 def click_translate():
     language = boxselect.get()
-    text_to_translate = boxtext.get("1.0", END)  # Pour récupérer tout le texte
+    text_to_translate = boxtext.get("1.0", "end-1c")
     translation = GoogleTranslator(source="auto", target=language).translate(text_to_translate)
+    
+    boxresult.configure(state="normal")
+    boxresult.delete("1.0", "end")
+    boxresult.insert("1.0", translation)
+    boxresult.configure(state="disabled")
 
-    # Pour modifier le texte dans un CTkTextbox désactivé
-    boxresult.configure(state="normal")  # Activer la modification
-    boxresult.delete("1.0", END)  # Supprimer l'ancien contenu
-    boxresult.insert("1.0", translation)  # Insérer la traduction
-    boxresult.configure(state="disabled")  # Désactiver à nouveau
+label = CTkLabel(app, text="Translator 0x", font=("Arial", 30), text_color="#32b878")
+label.place(relx=0.5, rely=.2, anchor="n")
 
+img_arrow = CTkLabel(app, text="", image=CTkImage(dark_image=icon_arrow, size=(20, 20)))
+img_arrow.place(relx=0.5, rely=0.5, anchor="center")
 
-label = CTkLabel(master=app, 
-                 text="Translator 0x", 
-                 font=("Arial", 30),
-                 text_color="#32b878")
-label.place(relx=.5, rely=.2, anchor="n")
+boxtext = CTkTextbox(app, wrap="word", width=400, height=150, fg_color="#2d3036", corner_radius=15)
+boxtext.place(relx=0.25, rely=0.5, anchor="center")
 
-img_arrow = CTkLabel(master=app, 
-                     text="", 
-                     image=CTkImage(dark_image=icon_arrow, size=(20,20)))
-img_arrow.place(relx=.5, rely=.5, anchor="center")
+boxresult = CTkTextbox(app, wrap="word", width=400, height=150, fg_color="#2d3036", corner_radius=15, state="disabled")
+boxresult.place(relx=0.75, rely=0.5, anchor="center")
 
-boxtext = CTkTextbox(master=app, 
-                     wrap="word",
-                     width=400, 
-                     height=150,
-                     fg_color="#2d3036", 
-                     corner_radius=15, 
-                     activate_scrollbars=True)
-boxtext.place(relx=.25, rely=.5, anchor="center")
+languages = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'assamese', 'aymara', 'azerbaijani', 'bambara', 
+             'basque', 'belarusian', 'bengali', 'bhojpuri', 'bosnian', 'bulgarian', 'catalan', 'cebuano', 'chichewa', 
+             'chinese (simplified)', 'chinese (traditional)', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 
+             'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'georgian', 'german', 'greek', 
+             'gujarati', 'haitian creole', 'hebrew', 'hindi', 'hungarian', 'indonesian', 'irish', 'italian', 'japanese', 
+             'kannada', 'kazakh', 'khmer', 'korean', 'kurdish', 'lao', 'latin', 'latvian', 'lithuanian', 'macedonian', 
+             'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar', 'nepali', 'norwegian', 'pashto', 
+             'persian', 'polish', 'portuguese', 'romanian', 'russian', 'serbian', 'slovak', 'slovenian', 'spanish', 
+             'swahili', 'swedish', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'vietnamese', 'zulu']
 
-boxresult = CTkTextbox(master=app, 
-                     wrap="word",
-                     width=400, 
-                     height=150,
-                     fg_color="#2d3036", 
-                     corner_radius=15, 
-                     activate_scrollbars=True)
-boxresult.place(relx=.75, rely=.5, anchor="center")
-boxresult.configure(state="disabled")
+boxselect = CTkComboBox(app, width=200, height=50, corner_radius=15, values=languages, dropdown_font=("Arial", 15))
+boxselect.place(relx=0.5, rely=0.7, anchor="center")
 
-boxselect = CTkComboBox(master=app, 
-                        width=200, 
-                        height=50,
-                        corner_radius=15,
-                        border_width=0,
-                        fg_color="#2d3036",
-                        button_color="#32456b",
-                        button_hover_color="#141a26",
-                        dropdown_fg_color="#212121",
-                        dropdown_hover_color="#2d3036",
-                        font=("Arial", 15),
-                        dropdown_font=("Arial", 15),
-                        values=['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'assamese', 'aymara', 'azerbaijani', 'bambara', 'basque', 'belarusian', 'bengali', 'bhojpuri', 'bosnian', 'bulgarian', 'catalan', 'cebuano', 'chichewa', 'chinese (simplified)', 'chinese (traditional)', 'corsican', 'croatian', 'czech', 'danish', 'dhivehi', 'dogri', 'dutch', 'english', 'esperanto', 'estonian', 'ewe', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'guarani', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'ilocano', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'kinyarwanda', 'konkani', 'korean', 'krio', 'kurdish (kurmanji)', 'kurdish (sorani)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lingala', 'lithuanian', 'luganda', 'luxembourgish', 'macedonian', 'maithili', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'meiteilon (manipuri)', 'mizo', 'mongolian', 'myanmar', 'nepali', 'norwegian', 'odia (oriya)', 'oromo', 'pashto', 'persian', 'polish', 'portuguese', 'punjabi', 'quechua', 'romanian', 'russian', 'samoan', 'sanskrit', 'scots gaelic', 'sepedi', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'tatar', 'telugu', 'thai', 'tigrinya', 'tsonga', 'turkish', 'turkmen', 'twi', 'ukrainian', 'urdu', 'uyghur', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu'],
-                        )
-boxselect.place(relx=.5, rely=.7, anchor="center")
-
-btn = CTkButton(master=app, 
-                text="Translate", 
-                width=200, 
-                height=50, 
-                corner_radius=12, 
-                fg_color="transparent",
-                hover_color="#40ad79", 
-                border_color="#2e855b",
-                border_width=2, 
-                image=CTkImage(dark_image=icon_translate,size=(20,20)),
+btn = CTkButton(app, text="Translate", width=200, height=50, corner_radius=12, fg_color="transparent", 
+                hover_color="#40ad79", border_color="#2e855b", border_width=2, image=CTkImage(dark_image=icon_translate, size=(20, 20)), 
                 command=click_translate)
-btn.place(relx=.5, rely=.9, anchor="s")
+btn.place(relx=0.5, rely=0.9, anchor="s")
 
 app.mainloop()
