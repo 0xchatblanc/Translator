@@ -27,5 +27,6 @@
 ## Installation
 
 1. Clone the GitHub repository to your local environment:
-```git clone https://github.com/0xtheghost/Translator.git 
+``` bash
+git clone https://github.com/0xtheghost/Translator.git 
 ```
