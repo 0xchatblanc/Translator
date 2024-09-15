@@ -76,7 +76,7 @@ python main_no_gui.py
 - Zulu: zu
 ```
 3. Choose the text to translate :
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img2.png)
+![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img3.png)
 
 
 ## License
