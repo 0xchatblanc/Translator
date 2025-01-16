@@ -1,4 +1,4 @@
-# Translator by 0xtheghost
+# Translator by 0xchatblanc
 ## Table of Contents
 
 - [About](#About)
@@ -28,7 +28,7 @@
 
 1. Clone the GitHub repository to your local environment:
 ``` bash
-git clone https://github.com/0xtheghost/Translator.git 
+git clone https://github.com/0xchatblanc/Translator.git 
 ```
 2. Navigate to the project directory:
 ``` bash
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 python main_no_gui.py
 ```
 2. Choose the language to translate
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img1.png)
+![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img1.png)
 ```
 - Afrikaans: af | Albanian: sq | Amharic: am | Arabic: ar | Armenian: hy | Assamese: as | Aymara: ay | Azerbaijani: az
 - Bambara: bm | Basque: eu | Belarusian: be | Bengali: bn | Bhojpuri: bho | Bosnian: bs | Bulgarian: bg
@@ -76,7 +76,7 @@ python main_no_gui.py
 - Zulu: zu
 ```
 3. Choose the text to translate :
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img3.png)
+![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img3.png)
 
 ### Running the GUI Tool
 1. Execute the script to start the translation tool:
@@ -84,11 +84,11 @@ python main_no_gui.py
 python main.py
 ```
 2. Choose the language to translate:
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img4.png)
+![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img4.png)
 
 #### *You can directly type in the selection bar to find the desired language. You can also use abbreviations, for example (English -> en, French -> fr).*
 
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img5.png)
+![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img5.png)
 ```
 - Afrikaans: af | Albanian: sq | Amharic: am | Arabic: ar | Armenian: hy | Assamese: as | Aymara: ay | Azerbaijani: az
 - Bambara: bm | Basque: eu | Belarusian: be | Bengali: bn | Bhojpuri: bho | Bosnian: bs | Bulgarian: bg
@@ -118,7 +118,7 @@ python main.py
 - Zulu: zu
 ```
 3. Choose the text to translate and submit:
-![Translator Overview](https://github.com/0xtheghost/Translator/blob/main/READMEimgs/img6.png)
+![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img6.png)
 
 ## License
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/0xtheghost/Translator/blob/main/LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/0xchatblanc/Translator/blob/main/LICENSE) file for details.
