@@ -79,7 +79,8 @@ Bonjour, comment ça va ?
 translator-tool/  
 ├── translator_gui.py        # Main GUI script  
 ├── translator_cli.py        # Main CLI script  
-├── images/                  # Icons for GUI  
+├── images/                  # Icons for GUI
+│   ├── translate_for_light.png 
 │   ├── translate_for_dark.png  
 │   └── right-arrow.png  
 └── requirements.txt         # Python dependencies  
