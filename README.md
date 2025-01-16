@@ -1,124 +1,140 @@
-# Translator by 0xchatblanc
-## Table of Contents
+# Translator Tool 🈵🌐  
+**Translator Tool** is a powerful Python-based GUI and CLI application designed for quick and efficient translations using the Google Translator API. The tool provides both a **Graphical User Interface (GUI)** for an intuitive user experience and a **Command-Line Interface (CLI)** for lightweight and fast translation needs.
 
-- [About](#About)
-- [Features](#Features)
-- [Prerequisites](#Prerequisites)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
+---
 
-## About
+## ✨ Features  
 
-**Translator** is an open-source program that uses the Google Translate API to automatically translate texts from user input or via the GUI. It supports multiple languages and can be used directly from the terminal. This project is ideal for those looking to automate translation tasks via a command-line interface (CLI) or graphique user interface (GUI).
+### GUI Application  
+- 🌍 **Language Selection**: Choose from a wide range of languages via a dropdown menu.  
+- 📜 **Text Translation**: Input text in one language and translate it to another instantly.  
+- 🎨 **Modern Design**: Built with **CustomTkinter**, featuring a dark theme and sleek design.  
+- 🖼️ **Image Integration**: Includes icons for buttons and labels for a polished look.  
 
-## Features
+### CLI Application  
+- ⚡ **Fast Translation**: Translate text directly in the terminal.  
+- 🔤 **Auto Language Detection**: Detects the source language automatically.  
+- 🎨 **Colorized Interface**: Uses **Colorama** to highlight text and make the CLI visually appealing.  
 
-- Automatic text translation into various languages
-- Multi-language support based on the Google Translate API
-- Simple and intuitive command-line interface
-- Customizable source and target languages
+---
 
-## Prerequisites
+## 🚀 Installation  
 
-- Python 3.10
-- Required Python libraries (listed in the `requirements.txt` file)
+### Prerequisites  
+Ensure you have **Python 3.8+** installed on your system.  
 
-## Installation
+### Install Dependencies  
+Run the following command to install the required Python packages:  
+```bash  
+pip install deep-translator customtkinter pillow colorama  
+```  
 
-1. Clone the GitHub repository to your local environment:
-``` bash
-git clone https://github.com/0xchatblanc/Translator.git 
+---
+
+## 🖥️ Usage  
+
+### GUI Mode  
+1. Run the `Translator` GUI application:  
+   ```bash  
+   python translator_gui.py  
+   ```  
+2. Input your text in the left textbox.  
+3. Select the target language from the dropdown menu.  
+4. Click **Translate** to see the result in the right textbox.  
+
+### CLI Mode  
+1. Run the CLI translator script:  
+   ```bash  
+   python translator_cli.py  
+   ```  
+2. Enter the desired target language (e.g., `fr` for French, `es` for Spanish).  
+3. Input the text to translate.  
+4. View the translated output directly in the terminal.  
+
+---
+
+## 🛠️ Example  
+
+### GUI Example  
+1. Enter text in the **left textbox** (e.g., "Hello, how are you?").  
+2. Select the **target language** (e.g., "French").  
+3. The translated text ("Bonjour, comment ça va ?") will appear in the **right textbox**.  
+
+### CLI Example  
+**Input**:  
+```  
+Choose the language of the text: fr  
+Text to translate: Hello, how are you?  
+```  
+**Output**:  
+```  
+Bonjour, comment ça va ?  
+```  
+
+---
+
+## 🗂️ Project Structure  
+
 ```
-2. Navigate to the project directory:
-``` bash
-cd Translator
-```
-3. Install the required dependencies:
-``` bash
-pip install -r requirements.txt
-```
+translator-tool/  
+├── translator_gui.py        # Main GUI script  
+├── translator_cli.py        # Main CLI script  
+├── images/                  # Icons for GUI  
+│   ├── translate_for_dark.png  
+│   └── right-arrow.png  
+└── requirements.txt         # Python dependencies  
+```  
 
-## Usage
-### Running the CLI Tool
-1. Execute the script to start the translation tool:
-``` bash
-python main_no_gui.py
-```
-2. Choose the language to translate
-![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img1.png)
-```
-- Afrikaans: af | Albanian: sq | Amharic: am | Arabic: ar | Armenian: hy | Assamese: as | Aymara: ay | Azerbaijani: az
-- Bambara: bm | Basque: eu | Belarusian: be | Bengali: bn | Bhojpuri: bho | Bosnian: bs | Bulgarian: bg
-- Catalan: ca | Cebuano: ceb | Chichewa: ny | Chinese (Simplified): zh-CN | Chinese (Traditional): zh-TW | Corsican: co | Croatian: hr | Czech: cs
-- Danish: da | Dhivehi: dv | Dogri: doi | Dutch: nl
-- English: en | Esperanto: eo | Estonian: et | Ewe: ee
-- Filipino: tl | Finnish: fi | French: fr | Frisian: fy
-- Galician: gl | Georgian: ka | German: de | Greek: el | Guarani: gn | Gujarati: gu | Haitian Creole: ht
-- Hausa: ha | Hawaiian: haw | Hebrew: iw | Hindi: hi | Hmong: hmn | Hungarian: hu
-- Icelandic: is | Igbo: ig | Ilocano: ilo | Indonesian: id | Irish: ga | Italian: it
-- Japanese: ja | Javanese: jw
-- Kannada: kn | Kazakh: kk | Khmer: km | Kinyarwanda: rw | Konkani: gom | Korean: ko | Krio: kri | Kurdish (Kurmanji): ku | Kurdish (Sorani): ckb | Kyrgyz: ky
-- Lao: lo | Latin: la | Latvian: lv | Lingala: ln | Lithuanian: lt | Luganda: lg | Luxembourgish: lb
-- Macedonian: mk | Maithili: mai | Malagasy: mg | Malay: ms | Malayalam: ml | Maltese: mt | Maori: mi | Marathi: mr | Meiteilon (Manipuri): mni-Mtei | Mizo: lus | Mongolian: mn | Myanmar: my
-- Nepali: ne | Norwegian: no
-- Odia (Oriya): or | Oromo: om
-- Pashto: ps | Persian: fa | Polish: pl | Portuguese: pt | Punjabi: pa
-- Quechua: qu
-- Romanian: ro | Russian: ru
-- Samoan: sm | Sanskrit: sa | Scots Gaelic: gd | Sepedi: nso | Serbian: sr | Sesotho: st | Shona: sn | Sindhi: sd | Sinhala: si | Slovak: sk | Slovenian: sl | Somali: so | Spanish: es | Sundanese: su | Swahili: sw | Swedish: sv
-- Tajik: tg | Tamil: ta | Tatar: tt | Telugu: te | Thai: th | Tigrinya: ti | Tsonga: ts | Turkish: tr | Turkmen: tk | Twi: ak
-- Ukrainian: uk | Urdu: ur | Uyghur: ug | Uzbek: uz
-- Vietnamese: vi
-- Welsh: cy
-- Xhosa: xh
-- Yiddish: yi | Yoruba: yo
-- Zulu: zu
-```
-3. Choose the text to translate :
-![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img3.png)
+---
 
-### Running the GUI Tool
-1. Execute the script to start the translation tool:
-``` bash
-python main.py
-```
-2. Choose the language to translate:
-![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img4.png)
+## 🌟 Supported Languages  
 
-#### *You can directly type in the selection bar to find the desired language. You can also use abbreviations, for example (English -> en, French -> fr).*
+The tool supports over **100 languages**, including:  
+- English (`en`), French (`fr`), Spanish (`es`), German (`de`), Chinese Simplified (`zh-CN`), Arabic (`ar`), Japanese (`ja`), and more.  
 
-![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img5.png)
-```
-- Afrikaans: af | Albanian: sq | Amharic: am | Arabic: ar | Armenian: hy | Assamese: as | Aymara: ay | Azerbaijani: az
-- Bambara: bm | Basque: eu | Belarusian: be | Bengali: bn | Bhojpuri: bho | Bosnian: bs | Bulgarian: bg
-- Catalan: ca | Cebuano: ceb | Chichewa: ny | Chinese (Simplified): zh-CN | Chinese (Traditional): zh-TW | Corsican: co | Croatian: hr | Czech: cs
-- Danish: da | Dhivehi: dv | Dogri: doi | Dutch: nl
-- English: en | Esperanto: eo | Estonian: et | Ewe: ee
-- Filipino: tl | Finnish: fi | French: fr | Frisian: fy
-- Galician: gl | Georgian: ka | German: de | Greek: el | Guarani: gn | Gujarati: gu | Haitian Creole: ht
-- Hausa: ha | Hawaiian: haw | Hebrew: iw | Hindi: hi | Hmong: hmn | Hungarian: hu
-- Icelandic: is | Igbo: ig | Ilocano: ilo | Indonesian: id | Irish: ga | Italian: it
-- Japanese: ja | Javanese: jw
-- Kannada: kn | Kazakh: kk | Khmer: km | Kinyarwanda: rw | Konkani: gom | Korean: ko | Krio: kri | Kurdish (Kurmanji): ku | Kurdish (Sorani): ckb | Kyrgyz: ky
-- Lao: lo | Latin: la | Latvian: lv | Lingala: ln | Lithuanian: lt | Luganda: lg | Luxembourgish: lb
-- Macedonian: mk | Maithili: mai | Malagasy: mg | Malay: ms | Malayalam: ml | Maltese: mt | Maori: mi | Marathi: mr | Meiteilon (Manipuri): mni-Mtei | Mizo: lus | Mongolian: mn | Myanmar: my
-- Nepali: ne | Norwegian: no
-- Odia (Oriya): or | Oromo: om
-- Pashto: ps | Persian: fa | Polish: pl | Portuguese: pt | Punjabi: pa
-- Quechua: qu
-- Romanian: ro | Russian: ru
-- Samoan: sm | Sanskrit: sa | Scots Gaelic: gd | Sepedi: nso | Serbian: sr | Sesotho: st | Shona: sn | Sindhi: sd | Sinhala: si | Slovak: sk | Slovenian: sl | Somali: so | Spanish: es | Sundanese: su | Swahili: sw | Swedish: sv
-- Tajik: tg | Tamil: ta | Tatar: tt | Telugu: te | Thai: th | Tigrinya: ti | Tsonga: ts | Turkish: tr | Turkmen: tk | Twi: ak
-- Ukrainian: uk | Urdu: ur | Uyghur: ug | Uzbek: uz
-- Vietnamese: vi
-- Welsh: cy
-- Xhosa: xh
-- Yiddish: yi | Yoruba: yo
-- Zulu: zu
-```
-3. Choose the text to translate and submit:
-![Translator Overview](https://github.com/0xchatblanc/Translator/blob/main/READMEimgs/img6.png)
+A complete list of languages is available in the code as `list_langue`.  
 
-## License
-This project is licensed under the Apache License 2.0 - see the [LICENSE](https://github.com/0xchatblanc/Translator/blob/main/LICENSE) file for details.
+---
+
+## ✨ Future Enhancements  
+- 📃 **Text-to-Speech Support**: Add a feature to read the translated text aloud.  
+- 📁 **File Translation**: Support for translating text files.  
+- 🖥️ **Desktop Packaging**: Package the GUI application into a standalone desktop app.  
+
+---
+
+## 🤝 Contributing  
+
+Contributions are welcome! To contribute:  
+1. Fork the repository.  
+2. Create a new branch for your feature:  
+   ```bash  
+   git checkout -b feature-name  
+   ```  
+3. Commit your changes:  
+   ```bash  
+   git commit -m "Add feature"  
+   ```  
+4. Push to your branch:  
+   ```bash  
+   git push origin feature-name  
+   ```  
+5. Open a pull request.  
+
+---
+
+## 📄 License  
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for more details.  
+
+---
+
+## 🙏 Acknowledgments  
+
+- Translation powered by [GoogleTranslator](https://pypi.org/project/deep-translator/).  
+- GUI design with [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter).  
+- CLI color enhancements with [Colorama](https://pypi.org/project/colorama/).  
+
+---
+
+**Created with ❤️ by 0xchatblanc.** 😊  
