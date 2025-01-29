@@ -6,7 +6,7 @@ from PIL import Image
 
 app = CTk()
 app.geometry("1000x800")
-app.title("Translator - |by 0xtheghost|")
+app.title("Translator Tool - |by 0xchatblanc|")
 set_appearance_mode("dark")
 app.minsize(900, 600)
 
@@ -23,7 +23,7 @@ def click_translate():
     boxresult.insert("1.0", translation)
     boxresult.configure(state="disabled")
 
-label = CTkLabel(app, text="Translator 0x", font=("Arial", 30), text_color="#32b878")
+label = CTkLabel(app, text="Translator Tool", font=("Arial", 30), text_color="#32b878")
 label.place(relx=0.5, rely=.2, anchor="n")
 
 img_arrow = CTkLabel(app, text="", image=CTkImage(dark_image=icon_arrow, size=(20, 20)))
